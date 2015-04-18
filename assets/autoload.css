@@ -1,0 +1,32 @@
+#header_menu #js_block_border_user_login-block .title {
+  margin-bottom: 10px;
+}
+#header_menu #js_block_border_user_login-block form > .table:first-of-type:before {
+  content: ' ';
+  display: block;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px #6d6d6d solid;
+}
+.fb_login_go {
+  cursor: pointer;
+  display: block;
+  background: #48649F;
+  color: #b3b3b3;
+  text-indent: 5px;
+  height: 30px;
+  line-height: 30px;
+  margin: 0px 10px 0px 10px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+.fb_login_go > i {
+  margin-right: 8px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+}
+.fb_login_go:hover {
+  transition: all 0.5s ease;
+  color: #fff;
+}

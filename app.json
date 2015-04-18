@@ -1,0 +1,18 @@
+{
+	"id": "Moxi9/Facebook",
+	"name": "PHPfox Facebook Base",
+	"version": "1.0",
+	"settings": {
+		"m9_facebook_enabled": {
+			"info": "Facebook Login Enabled",
+			"type": "input:radio",
+			"value": 0
+		},
+		"m9_facebook_app_id": {
+			"info": "Facebook Application ID"
+		},
+		"m9_facebook_app_secret": {
+			"info": "Facebook App Secret"
+		}
+	}
+}

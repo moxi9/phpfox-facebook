@@ -1,0 +1,43 @@
+
+@import "../../../../../PF.Base/less/variables";
+
+#header_menu #js_block_border_user_login-block {
+	.title {
+		margin-bottom:10px;
+	}
+
+	form {
+		> .table:first-of-type:before {
+			content: ' ';
+			display:block;
+			padding-bottom:15px;
+			margin-bottom:15px;
+			border-bottom:1px lighten(@headerBg, 8%) solid;
+		}
+	}
+}
+
+.fb_login_go {
+	cursor:pointer;
+	display:block;
+	background:#48649F;
+	color:darken(#fff, 30%);
+	text-indent:5px;
+	height:30px;
+	line-height:30px;
+	margin:0px 10px 0px 10px;
+	border-radius:3px;
+	font-size:12px;
+
+	> i {
+		margin-right:8px;
+		color:#fff;
+		font-size:16px;
+		font-weight:500;
+	}
+}
+
+.fb_login_go:hover {
+	transition:@transition;
+	color:#fff;
+}
