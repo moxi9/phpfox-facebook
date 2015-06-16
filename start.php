@@ -1,6 +1,10 @@
 <?php
 
+/**
+ * Using the Event handler we add JS & CSS to the <head></head>
+ */
 new Core\Event([
+	// event to attach to
 	'lib_phpfox_template_getheader' => function(Phpfox_Template $Template) {
 			if (!setting('m9_facebook_enabled')) {
 				$Template->setHeader('<script>var Fb_Login_Disabled = true;</script>');
@@ -9,16 +13,15 @@ new Core\Event([
 		}
 ]);
 
+// Make sure the app is enabled
 if (!setting('m9_facebook_enabled')) {
 	return;
 }
 
-// $Url = new Core\Url();
-// if ($Url->route())
-// d($Url->route()); exit;
-
+// Use the FB SDK to set the apps ID & Secret
 Facebook\FacebookSession::setDefaultApplication(setting('m9_facebook_app_id'), setting('m9_facebook_app_secret'));
 
+// We override the main settings page since their account is connected to FB
 $Url = new Core\Url();
 if (Phpfox::isUser() && $Url->uri() == '/user/setting/' && substr(Phpfox::getUserBy('email'), -3) == '@fb') {
 	(new Core\Route('/user/setting'))->run(function(\Core\Controller $Controller) {
@@ -26,6 +29,9 @@ if (Phpfox::isUser() && $Url->uri() == '/user/setting/' && substr(Phpfox::getUse
 	});
 }
 
+/**
+ * Controller for the FB login routine
+ */
 (new Core\Route('/fb/login'))->run(function(\Core\Controller $Controller) {
 	$helper = new Facebook\FacebookRedirectLoginHelper($Controller->url->make('/fb/auth'));
 	$loginUrl = $helper->getLoginUrl();
@@ -34,6 +40,9 @@ if (Phpfox::isUser() && $Url->uri() == '/user/setting/' && substr(Phpfox::getUse
 	exit;
 });
 
+/**
+ * Auth routine for FB Connect. This is where we either create the new user or log them in if they are already a user.
+ */
 (new Core\Route('/fb/auth'))->run(function(\Core\Controller $Controller) {
 	$helper = new Facebook\FacebookRedirectLoginHelper($Controller->url->make('/fb/auth'));
 	$session = $helper->getSessionFromRedirect();
@@ -44,7 +53,7 @@ if (Phpfox::isUser() && $Url->uri() == '/user/setting/' && substr(Phpfox::getUse
 
 		$user = $response->getGraphObject(Facebook\GraphUser::className());
 		if ($user instanceof Facebook\GraphUser) {
-			$Service = new \Apps\Moxi9\Facebook\Model\Service();
+			$Service = new \Apps\PHPfox_Facebook\Model\Service();
 			$Service->create($user);
 
 			$Controller->url->send('/');

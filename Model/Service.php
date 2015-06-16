@@ -1,8 +1,21 @@
 <?php
 
-namespace Apps\Moxi9\Facebook\Model;
+namespace Apps\PHPfox_Facebook\Model;
 
+/**
+ * Service class for Facebook Connect App
+ *
+ * @package Apps\PHPfox_Facebook\Model
+ */
 class Service extends \Core\Model {
+
+	/**
+	 * Create a new user or log them in if they exist
+	 *
+	 * @param \Facebook\GraphUser $fb
+	 * @return bool
+	 * @throws \Exception
+	 */
 	public function create(\Facebook\GraphUser $fb) {
 		$email = $fb->getId() . '@fb';
 		$user = $this->db->select('*')->from(':user')->where(['email' => $email])->get();
