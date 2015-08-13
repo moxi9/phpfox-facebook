@@ -1,19 +1,19 @@
 {
-	"id": "PHPfox_Facebook",
-	"name": "PHPfox Facebook Base",
-	"version": "1.0",
-	"icon": "http://d2h79mkp7etn4r.cloudfront.net/icon/2015/06/1a3a613ef88031af4b687d48b6a3f752.png",
-	"settings": {
-		"m9_facebook_enabled": {
-			"info": "Facebook Login Enabled",
-			"type": "input:radio",
-			"value": 0
-		},
-		"m9_facebook_app_id": {
-			"info": "Facebook Application ID"
-		},
-		"m9_facebook_app_secret": {
-			"info": "Facebook App Secret"
-		}
-	}
+    "id": "PHPfox_Facebook",
+    "name": "PHPfox Facebook Base",
+    "version": 1.1,
+    "icon": "http:\/\/d2h79mkp7etn4r.cloudfront.net\/icon\/2015\/06\/1a3a613ef88031af4b687d48b6a3f752.png",
+    "settings": {
+        "m9_facebook_enabled": {
+            "info": "Facebook Login Enabled",
+            "type": "input:radio",
+            "value": 0
+        },
+        "m9_facebook_app_id": {
+            "info": "Facebook Application ID"
+        },
+        "m9_facebook_app_secret": {
+            "info": "Facebook App Secret"
+        }
+    }
 }
