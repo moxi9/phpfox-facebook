@@ -1,3 +1,15 @@
+/*
+PF.event.on('urer_image_url', function(obj, user) {
+	var r = new RegExp("\{'fb':'([0-9]+)'\}", 'gi');
+	user['user_image'].replace(r, function (match) {
+		match = $.parseJSON(match.replace(new RegExp('\'', 'g'), '"'));
+		//	obj.user_image = '<img src="http://graph.facebook.com/' + match.fb + '/picture?type=large">';
+		return '';
+	});
+	p(user);
+});
+*/
+
 /**
  * Load the routine when PHPfox is ready
  */
@@ -9,6 +21,7 @@ $Ready(function() {
 			obj.user_image.replace(r, function (match) {
 				match = $.parseJSON(match.replace(new RegExp('\'', 'g'), '"'));
 				obj.user_image = '<img src="http://graph.facebook.com/' + match.fb + '/picture?type=large">';
+
 				return '';
 			});
 		});
