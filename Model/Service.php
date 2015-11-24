@@ -31,7 +31,7 @@ class Service extends \Core\Model {
 				'user_group_id' => NORMAL_USER_ID,
 				'email' => $email,
 				'password' => $password,
-				'full_name' => $fb->getFirstName() . ' ' . $fb->getLastName(),
+				'full_name' => $fb->getName(),
 				'user_name' => 'fb-' . $fb->getId(),
 				'user_image' => '{"fb":"' . $fb->getId() . '"}',
 				'joined' => PHPFOX_TIME,
