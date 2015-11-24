@@ -20,7 +20,7 @@ $Ready(function() {
 			var r = new RegExp("\{'fb':'([0-9]+)'\}", 'gi');
 			obj.user_image.replace(r, function (match) {
 				match = $.parseJSON(match.replace(new RegExp('\'', 'g'), '"'));
-				obj.user_image = '<img src="http://graph.facebook.com/' + match.fb + '/picture?type=large">';
+				obj.user_image = '<img src="http://graph.facebook.com/' + match.fb + '/picture?width=200&height=200">';
 
 				return '';
 			});
