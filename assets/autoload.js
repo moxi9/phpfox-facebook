@@ -58,7 +58,7 @@ $Ready(function() {
 
 	// Add the FB login button
 	if (!$('.fb_login_go').length) {
-		$('#js_block_border_user_login-block form').before('<span class="fb_login_go"><i class="fa fa-facebook-official"></i>Facebook</span>');
+		$('#js_block_border_user_login-block form, .guest_login.header-login-form').before('<span class="fb_login_go"><i class="fa fa-facebook-official"></i>Facebook</span>');
 	}
 
 	// Click event to send the user to log into Facebook
