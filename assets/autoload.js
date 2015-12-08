@@ -59,6 +59,9 @@ $Ready(function() {
 	// Add the FB login button
 	if (!$('.fb_login_go').length) {
 		$('#js_block_border_user_login-block form, .guest_login.header-login-form').before('<span class="fb_login_go"><i class="fa fa-facebook-official"></i>Facebook</span>');
+		if ($('.guest_login.header-login-form').length) {
+			$('head').append("<style>/* FB Login App Temp Fix */.fb_login_go {float: right;margin-top: 22px !important;width: 95px !important;}.form-inline.text-left {float: left;/* End FB Login App Temp Fix */}</style>");
+		}
 	}
 
 	// Click event to send the user to log into Facebook
